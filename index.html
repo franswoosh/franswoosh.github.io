@@ -95,7 +95,7 @@
 </head>
 <body>
   <header>
-    <h1>Graceful Verses</h1>
+    <h1>Franswoosh</h1>
     <nav>
       <a href="#poems">Poems</a>
       <a href="#about">About</a>
@@ -134,50 +134,52 @@
     </section>
   </div>
 <div class="sheep"></div>
-@keyframes walk {
-  0% {
+<style>
+  @keyframes walk {
+    0% {
+      left: -100px;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  .sheep {
+    position: fixed;
+    bottom: 20px;
     left: -100px;
+    width: 60px;
+    height: 40px;
+    background: white;
+    border-radius: 50% 50% 40% 40%;
+    box-shadow: 0 0 0 2px #ccc inset;
+    animation: walk 20s linear infinite;
+    z-index: 1000;
   }
-  100% {
-    left: 100%;
+
+  .sheep::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    width: 40px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: -10px 0 white, 10px 0 white;
   }
-}
 
-.sheep {
-  position: fixed;
-  bottom: 20px;
-  left: -100px;
-  width: 60px;
-  height: 40px;
-  background: white;
-  border-radius: 50% 50% 40% 40%;
-  box-shadow: 0 0 0 2px #ccc inset;
-  animation: walk 20s linear infinite;
-  z-index: 1000;
-}
-
-.sheep::before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: 10px;
-  width: 40px;
-  height: 30px;
-  background: white;
-  border-radius: 50%;
-  box-shadow: -10px 0 white, 10px 0 white;
-}
-
-.sheep::after {
-  content: '';
-  position: absolute;
-  top: 12px;
-  left: 45px;
-  width: 10px;
-  height: 10px;
-  background: #333;
-  border-radius: 50%;
-}
+  .sheep::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 45px;
+    width: 10px;
+    height: 10px;
+    background: #333;
+    border-radius: 50%;
+  }
+</style>
   <footer>
     &copy; 2025 Franswoosh. All rights reserved.
   </footer>
