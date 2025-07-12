@@ -133,170 +133,70 @@
       <p>@fran.swoosh</p>
     </section>
   </div>
-<div class="sheep-container">
 <style>
-  @keyframes hop {
+  @keyframes bounce-across {
     0% {
-      transform: translateY(0) translateX(0);
+      left: -100px;
+      bottom: 40px;
     }
     25% {
-      transform: translateY(-30px) translateX(25vw);
+      bottom: 120px;
     }
     50% {
-      transform: translateY(0) translateX(50vw);
+      left: 50vw;
+      bottom: 40px;
     }
     75% {
-      transform: translateY(-30px) translateX(75vw);
+      bottom: 120px;
     }
     100% {
-      transform: translateY(0) translateX(100vw);
+      left: 100vw;
+      bottom: 40px;
     }
   }
 
-  .sheep {
+  .basketball {
     position: fixed;
-    bottom: 40px;
     left: -100px;
-    width: 120px;
-    height: 100px;
-    animation: hop 10s ease-in-out infinite;
+    bottom: 40px;
+    width: 60px;
+    height: 60px;
+    background: orange;
+    border-radius: 50%;
+    border: 3px solid #cc6600;
+    box-shadow: inset -4px -4px 0 #cc6600;
+    animation: bounce-across 6s ease-in-out infinite;
     z-index: 9999;
   }
 
-  .sheep::before,
-  .sheep::after,
-  .sheep .fluff,
-  .sheep .head,
-  .sheep .eye,
-  .sheep .smile,
-  .sheep .ear,
-  .sheep .tail,
-  .sheep .leg {
+  /* Basketball lines */
+  .basketball::before,
+  .basketball::after {
     content: '';
     position: absolute;
-  }
-
-  .sheep .body {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    background: white;
+    background: #cc6600;
     border-radius: 50%;
-    box-shadow: 0 0 0 2px #ccc;
-    top: 10px;
-    left: 20px;
   }
 
-  .sheep .fluff-1 {
-    width: 30px;
-    height: 30px;
+  /* Vertical line */
+  .basketball::before {
+    width: 3px;
+    height: 100%;
+    left: 50%;
     top: 0;
-    left: 20px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px #ccc;
+    transform: translateX(-50%);
   }
 
-  .sheep .fluff-2 {
-    width: 25px;
-    height: 25px;
-    top: 5px;
-    left: 50px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px #ccc;
+  /* Horizontal curve line */
+  .basketball::after {
+    width: 100%;
+    height: 3px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
   }
-
-  .sheep .fluff-3 {
-    width: 20px;
-    height: 20px;
-    top: 25px;
-    left: 0px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px #ccc;
-  }
-
-  .sheep .head {
-    width: 35px;
-    height: 35px;
-    background: #333;
-    border-radius: 50%;
-    top: 35px;
-    left: -10px;
-    z-index: 2;
-  }
-
-  .sheep .eye {
-    width: 8px;
-    height: 8px;
-    background: white;
-    border-radius: 50%;
-    top: 10px;
-    left: 8px;
-  }
-
-  .sheep .smile {
-    width: 10px;
-    height: 5px;
-    border-bottom: 2px solid white;
-    border-radius: 50%;
-    top: 20px;
-    left: 10px;
-  }
-
-  .sheep .ear {
-    width: 8px;
-    height: 12px;
-    background: #333;
-    border-radius: 50%;
-    top: 8px;
-    left: -6px;
-  }
-
-  .sheep .tail {
-    width: 15px;
-    height: 15px;
-    background: white;
-    border-radius: 50%;
-    top: 40px;
-    left: 95px;
-    box-shadow: 0 0 0 2px #ccc;
-  }
-
-  .sheep .leg {
-    width: 8px;
-    height: 20px;
-    background: #333;
-    bottom: 0;
-    border-radius: 4px;
-  }
-
-  .sheep .leg1 { left: 30px; }
-  .sheep .leg2 { left: 45px; }
-  .sheep .leg3 { left: 60px; }
-  .sheep .leg4 { left: 75px; }
 </style>
-  <div class="sheep">
-  <div class="body"></div>
-  <div class="fluff-1"></div>
-  <div class="fluff-2"></div>
-  <div class="fluff-3"></div>
-
-  <div class="head">
-    <div class="eye"></div>
-    <div class="smile"></div>
-    <div class="ear"></div>
-  </div>
-
-  <div class="tail"></div>
-
-  <div class="leg leg1"></div>
-  <div class="leg leg2"></div>
-  <div class="leg leg3"></div>
-  <div class="leg leg4"></div>
-</div>
-  <footer>
+    </footer>
     &copy; 2025 Franswoosh. All rights reserved.
   </footer>
 </a>
