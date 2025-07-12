@@ -139,7 +139,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Basketball to Happy Face</title>
+  <title>Bouncing Basketball Fixed</title>
   <style>
     body {
       margin: 0;
@@ -156,9 +156,9 @@
       background-size: cover;
       background-position: center;
       position: absolute;
-      bottom: 0;
+      bottom: 10px; /* Closer to the bottom */
       left: 0;
-      animation: bounce 1s infinite ease-in-out, move 5s linear infinite;
+      animation: bounce 0.6s infinite ease-in-out, move 5s linear infinite;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -174,10 +174,10 @@
 
     @keyframes bounce {
       0%, 100% {
-        bottom: 0;
+        transform: translateY(0);
       }
       50% {
-        bottom: 100px;
+        transform: translateY(-40px); /* Lower bounce height */
       }
     }
 
@@ -186,21 +186,20 @@
         left: 0;
       }
       100% {
-        left: 100%;
+        left: calc(100% - 60px); /* Keeps ball visible */
       }
     }
   </style>
 </head>
 <body>
-  <div class="ball" onclick="replaceWithFace(this)">
-    <!-- Empty initially; face will go here -->
-  </div>
+  <div class="ball" onclick="replaceWithFace(this)"></div>
 
   <script>
     function replaceWithFace(element) {
       element.classList.add('face');
       element.textContent = '😊';
     }
+    left: calc(100% - 60px);
   </script>
 </body>
 </html>
