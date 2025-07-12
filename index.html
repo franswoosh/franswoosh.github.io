@@ -139,7 +139,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bouncing Basketball Fixed</title>
+  <title>Reversing Bouncing Basketball</title>
   <style>
     body {
       margin: 0;
@@ -156,15 +156,15 @@
       background-size: cover;
       background-position: center;
       position: absolute;
-      bottom: 10px; /* Closer to the bottom */
+      bottom: 10px;
       left: 0;
-      animation: bounce 0.6s infinite ease-in-out, move 5s linear infinite;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 32px;
       cursor: pointer;
       user-select: none;
+      animation: bounce 1s infinite ease-in-out;
     }
 
     .ball.face {
@@ -177,32 +177,45 @@
         transform: translateY(0);
       }
       50% {
-        transform: translateY(-40px); /* Lower bounce height */
-      }
-    }
-
-    @keyframes move {
-      0% {
-        left: 0;
-      }
-      100% {
-        left: calc(100% - 60px); /* Keeps ball visible */
+        transform: translateY(-40px);
       }
     }
   </style>
 </head>
 <body>
-  <div class="ball" onclick="replaceWithFace(this)"></div>
+  <div class="ball" id="ball" onclick="replaceWithFace(this)"></div>
 
   <script>
+    const ball = document.getElementById('ball');
+    let pos = 0;
+    let direction = 1; // 1 = right, -1 = left
+    const speed = 2; // pixels per frame
+    const frameRate = 10; // milliseconds
+
+    function moveBall() {
+      const screenWidth = window.innerWidth;
+      const ballWidth = ball.offsetWidth;
+
+      pos += speed * direction;
+
+      // Reverse direction at edges
+      if (pos + ballWidth >= screenWidth || pos <= 0) {
+        direction *= -1;
+      }
+
+      ball.style.left = pos + 'px';
+    }
+
+    setInterval(moveBall, frameRate);
+
     function replaceWithFace(element) {
       element.classList.add('face');
       element.textContent = '😊';
     }
-    left: calc(100% - 60px);
   </script>
 </body>
 </html>
+
 
     </footer>
     &copy; 2025 Franswoosh. All rights reserved.
