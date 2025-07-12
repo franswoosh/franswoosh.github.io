@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Graceful Verses</title>
+  <title>Franswoosh</title>
   <style>
     :root {
       --bg: #ffffff;
@@ -105,41 +105,81 @@
 
   <div class="container">
     <section class="poem">
-      <h2>Light of the Morning</h2>
+      <h2>Poem 1 Title</h2>
       <p>
-        When dawn awakens the slumbered skies,
-        His mercy greets my weary eyes.
-        Each ray a whisper of His grace,
-        A gentle touch, a warm embrace.
+        This is where I'd write
+        my first poem.
+        Not sure what it'd be about yet,
+        but it'll come soon. 
       </p>
     </section>
 
     <section class="poem">
-      <h2>Quiet Waters</h2>
+      <h2>Poem 2 Title</h2>
       <p>
-        He leads me through the silent stream,
-        A path of peace, a sacred dream.
-        In stillness, I can hear Him say,
-        "Child, walk with Me along the way."
+        Here would be my second poem.
       </p>
     </section>
 
     <section id="about">
       <h2>About</h2>
       <p>
-        Graceful Verses is a curated selection of poems that reflect themes of peace, faith, and gentle contemplation. 
-        Each verse is crafted to bring light and stillness into the reader's day.
+        My name's Frances. I play -- attempt to play -- basketball. When I make a miraculous shot, you hear a swoosh. Hence, Franswoosh.
       </p>
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: hello@gracefulverses.com</p>
+      <h2>Instagram</h2>
+      <p>@fran.swoosh</p>
     </section>
   </div>
+<div class="sheep"></div>
+@keyframes walk {
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: 100%;
+  }
+}
 
+.sheep {
+  position: fixed;
+  bottom: 20px;
+  left: -100px;
+  width: 60px;
+  height: 40px;
+  background: white;
+  border-radius: 50% 50% 40% 40%;
+  box-shadow: 0 0 0 2px #ccc inset;
+  animation: walk 20s linear infinite;
+  z-index: 1000;
+}
+
+.sheep::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  width: 40px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: -10px 0 white, 10px 0 white;
+}
+
+.sheep::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 45px;
+  width: 10px;
+  height: 10px;
+  background: #333;
+  border-radius: 50%;
+}
   <footer>
-    &copy; 2025 Graceful Verses. All rights reserved.
+    &copy; 2025 Franswoosh. All rights reserved.
   </footer>
   </footer>
 </body>
