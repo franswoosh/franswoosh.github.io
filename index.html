@@ -2,72 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Franswoosh!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graceful Verses</title>
   <style>
+    :root {
+      --bg: #ffffff;
+      --text: #222222;
+      --accent: #888888;
+      --border: #dddddd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Georgia', serif;
-      background-color: #fff8f0;
-      color: #333;
       margin: 0;
-      padding: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
+
     header {
-      background-color: #d4a373;
-      color: white;
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 1rem;
       text-align: center;
-      padding: 2rem;
     }
-    main {
-      padding: 2rem;
-      max-width: 700px;
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 800px;
       margin: auto;
+      padding: 2rem 1rem;
     }
+
     .poem {
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid #ccc;
+      border-left: 4px solid var(--accent);
+      padding-left: 1rem;
+      margin-bottom: 2rem;
     }
-    .poem-title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #7f5539;
+
+    .poem h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
+      font-weight: 500;
     }
-    .poem-content {
+
+    .poem p {
+      font-size: 1.1rem;
       white-space: pre-line;
-      margin-top: 1rem;
     }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    #about, #contact {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+
     footer {
       text-align: center;
-      padding: 1rem;
-      background-color: #7f5539;
-      color: white;
-      position: sticky;
-      bottom: 0;
+      padding: 2rem 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--accent);
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>My Poetry Collection</h1>
-    <p>Words from the heart, shared with the world.</p>
+    <h1>Graceful Verses</h1>
+    <nav>
+      <a href="#poems">Poems</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <main>
+  <div class="container">
     <section class="poem">
-      <div class="poem-title">Sunset Whisper</div>
-      <div class="poem-content">
-        yo testing,  
-        1.  
-        2,  
-        3.
-      </div>
+      <h2>Light of the Morning</h2>
+      <p>
+        When dawn awakens the slumbered skies,
+        His mercy greets my weary eyes.
+        Each ray a whisper of His grace,
+        A gentle touch, a warm embrace.
+      </p>
     </section>
-  </main>
+
+    <section class="poem">
+      <h2>Quiet Waters</h2>
+      <p>
+        He leads me through the silent stream,
+        A path of peace, a sacred dream.
+        In stillness, I can hear Him say,
+        "Child, walk with Me along the way."
+      </p>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        Graceful Verses is a curated selection of poems that reflect themes of peace, faith, and gentle contemplation. 
+        Each verse is crafted to bring light and stillness into the reader's day.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: hello@gracefulverses.com</p>
+    </section>
+  </div>
 
   <footer>
-    &copy; 2025 Franswoosh!
+    &copy; 2025 Graceful Verses. All rights reserved.
+  </footer>
   </footer>
 </body>
 <a href="2index.html" style="
