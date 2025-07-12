@@ -133,13 +133,12 @@
       <p>@fran.swoosh</p>
     </section>
   </div>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Reversing Bouncing Basketball</title>
+  <title>Smooth Reversing Basketball</title>
   <style>
     body {
       margin: 0;
@@ -189,8 +188,7 @@
     const ball = document.getElementById('ball');
     let pos = 0;
     let direction = 1; // 1 = right, -1 = left
-    const speed = 2; // pixels per frame
-    const frameRate = 10; // milliseconds
+    const speed = 1.5; // pixels per frame
 
     function moveBall() {
       const screenWidth = window.innerWidth;
@@ -198,21 +196,26 @@
 
       pos += speed * direction;
 
-      // Reverse direction at edges
+      // Reverse direction when hitting edge
       if (pos + ballWidth >= screenWidth || pos <= 0) {
         direction *= -1;
       }
 
       ball.style.left = pos + 'px';
+
+      requestAnimationFrame(moveBall);
     }
 
-    setInterval(moveBall, frameRate);
+    requestAnimationFrame(moveBall);
 
     function replaceWithFace(element) {
       element.classList.add('face');
       element.textContent = '😊';
     }
   </script>
+</body>
+</html>
+
 </body>
 </html>
 
