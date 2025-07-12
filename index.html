@@ -134,95 +134,76 @@
     </section>
   </div>
 
-<style>
-  @keyframes bounce-across {
-    0% {
-      left: -100px;
-      bottom: 40px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Basketball to Happy Face</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #f0f0f0;
+      overflow: hidden;
+      height: 100vh;
+      position: relative;
     }
-    10% {
-      bottom: 140px;
+
+    .ball {
+      width: 60px;
+      height: 60px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png');
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      animation: bounce 1s infinite ease-in-out, move 5s linear infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      cursor: pointer;
+      user-select: none;
     }
-    30% {
-      bottom: 40px;
+
+    .ball.face {
+      background-image: none;
+      background-color: transparent;
     }
-    50% {
-      bottom: 140px;
+
+    @keyframes bounce {
+      0%, 100% {
+        bottom: 0;
+      }
+      50% {
+        bottom: 100px;
+      }
     }
-    70% {
-      bottom: 40px;
+
+    @keyframes move {
+      0% {
+        left: 0;
+      }
+      100% {
+        left: 100%;
+      }
     }
-    90% {
-      bottom: 140px;
+  </style>
+</head>
+<body>
+  <div class="ball" onclick="replaceWithFace(this)">
+    <!-- Empty initially; face will go here -->
+  </div>
+
+  <script>
+    function replaceWithFace(element) {
+      element.classList.add('face');
+      element.textContent = '😊';
     }
-    100% {
-      left: 100vw;
-      bottom: 40px;
-    }
-  }
-
-  .basketball {
-    position: fixed;
-    left: -100px;
-    bottom: 40px;
-    width: 60px;
-    height: 60px;
-    background: radial-gradient(circle at 30% 30%, #ff7f00, #cc5500 80%);
-    border-radius: 50%;
-    border: 3px solid #cc6600;
-    box-shadow:
-      inset -6px -6px 8px #cc6600,
-      inset 6px 6px 10px #ffb347;
-    animation: bounce-across 5s ease-in-out infinite;
-    z-index: 9999;
-  }
-
-  /* Classic basketball lines */
-  /* Use pseudo-elements for lines */
-
-  /* Two curved vertical parallel lines */
-  .basketball::before,
-  .basketball::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 80%;
-    top: 10%;
-    border: 3px solid transparent;
-    border-left-color: #663300;
-    border-right-color: #663300;
-    border-radius: 30% / 50%;
-  }
-
-  .basketball::before {
-    left: 15%;
-    transform: rotate(15deg);
-    box-shadow: 1px 0 1px #996633;
-  }
-
-  .basketball::after {
-    right: 15%;
-    transform: rotate(-15deg);
-    box-shadow: 1px 0 1px #996633;
-  }
-
-  /* Curved horizontal line */
-  .basketball .horizontal-line {
-    position: absolute;
-    width: 80%;
-    height: 6px;
-    top: 50%;
-    left: 10%;
-    border: 3px solid #663300;
-    border-radius: 50% / 100%;
-    box-shadow: 0 1px 1px #996633;
-    transform: translateY(-50%);
-  }
-</style>
-
-<div class="basketball">
-  <div class="horizontal-line"></div>
-</div>
+  </script>
+</body>
+</html>
 
     </footer>
     &copy; 2025 Franswoosh. All rights reserved.
