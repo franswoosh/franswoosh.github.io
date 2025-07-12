@@ -133,52 +133,106 @@
       <p>@fran.swoosh</p>
     </section>
   </div>
-<div class="sheep"></div>
-<style>
-  @keyframes walk {
-    0% {
-      left: -100px;
-    }
-    100% {
-      left: 100%;
-    }
-  }
-
-  .sheep {
-    position: fixed;
-    bottom: 20px;
+<div class="sheep-container">
+  <div class="sheep">
+    <div class="body"></div>
+    <div class="head">
+      <div class="eye"></div>
+      <div class="ear"></div>
+    </div>
+    <div class="legs">
+      <div class="leg"></div>
+      <div class="leg"></div>
+      <div class="leg"></div>
+      <div class="leg"></div>
+    </div>
+  </div>
+</div>
+  <style>
+ /* Animation Keyframes */
+@keyframes walk-across {
+  0% {
     left: -100px;
-    width: 60px;
-    height: 40px;
-    background: white;
-    border-radius: 50% 50% 40% 40%;
-    box-shadow: 0 0 0 2px #ccc inset;
-    animation: walk 20s linear infinite;
-    z-index: 1000;
+    transform: translateY(0);
   }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    left: 100%;
+    transform: translateY(0);
+  }
+}
 
-  .sheep::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: 10px;
-    width: 40px;
-    height: 30px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: -10px 0 white, 10px 0 white;
-  }
+/* Sheep Container */
+.sheep-container {
+  position: fixed;
+  bottom: 30px;
+  left: -100px;
+  width: 100px;
+  height: 80px;
+  animation: walk-across 20s linear infinite;
+  z-index: 9999;
+}
 
-  .sheep::after {
-    content: '';
-    position: absolute;
-    top: 12px;
-    left: 45px;
-    width: 10px;
-    height: 10px;
-    background: #333;
-    border-radius: 50%;
-  }
+/* Sheep Body */
+.sheep {
+  position: relative;
+  width: 60px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px #ccc inset;
+}
+
+/* Sheep Head */
+.head {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: #333;
+  border-radius: 50%;
+  top: 8px;
+  left: -18px;
+}
+
+/* Eye */
+.eye {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  top: 7px;
+  left: 7px;
+}
+
+/* Ear */
+.ear {
+  position: absolute;
+  width: 6px;
+  height: 10px;
+  background: #333;
+  border-radius: 50%;
+  top: 5px;
+  left: -4px;
+}
+
+/* Legs */
+.legs {
+  position: absolute;
+  bottom: -8px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.leg {
+  width: 6px;
+  height: 12px;
+  background: #333;
+  border-radius: 3px;
+}
 </style>
   <footer>
     &copy; 2025 Franswoosh. All rights reserved.
